@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font　これ httpsにすると動く-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <title>Kaisendon CallBack</title>
+</head>
+
+<body onload="setURL()">
+    <!-- マテリアルデザインのやつ -->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <div class="center">
+        <a id="callback_button" class="waves-effect waves-light btn" id="login_button" href="kaisendon://callback"><i
+                class="material-icons left">refresh</i>Start Kaisendon</a>
+    </div>
+</body>
+
+<script>
+    function setURL(){
+        //パラメーター取得（?code=から
+        var code = location.search;
+        //ボタンのリンク変更
+        document.getElementById('callback_button').href = document.getElementById('callback_button').href + code;
+    }
+</script>
+
+</html>
