@@ -18,15 +18,18 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <div class="center">
+        <p>自動的にアプリに戻ります。戻らない場合は下のボタンを押してください。</p>
         <a id="callback_button" class="waves-effect waves-light btn" id="login_button" href="kaisendon://callback"><i
                 class="material-icons left">refresh</i>Start Kaisendon</a>
     </div>
 </body>
 
 <script>
-    function setURL(){
+    function setURL() {
         //パラメーター取得（?code=から
         var code = location.search;
+        //読み込みが終わったら画面が切り替わるようにする
+        location.href = document.getElementById('callback_button').href + code;
         //ボタンのリンク変更
         document.getElementById('callback_button').href = document.getElementById('callback_button').href + code;
     }
